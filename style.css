@@ -66,10 +66,11 @@ a:hover {
   opacity: 0.55;
 }
 
-/* Emphasis: serif + accent color — Japanese-friendly (no italic) */
+/* Emphasis: keep surrounding sans-serif font, accent color + slightly bolder
+   Japanese-friendly (no italic, no Mincho serif) */
 em {
   font-style: normal;
-  font-family: var(--font-serif);
+  font-family: inherit;
   font-weight: 500;
   color: var(--accent);
   font-feature-settings: "palt" 1;
@@ -1802,7 +1803,6 @@ section {
 }
 
 .integrative-lead em {
-  color: var(--ink);
   font-weight: 500;
 }
 
@@ -1855,7 +1855,7 @@ section {
 
 .integrative-card-title em {
   font-style: normal;
-  font-family: var(--font-serif);
+  font-family: inherit;
   font-weight: 500;
 }
 
@@ -1886,7 +1886,7 @@ section {
 
 .integrative-flow-title em {
   font-style: normal;
-  font-family: var(--font-serif);
+  font-family: inherit;
 }
 
 .integrative-flow-sub {
