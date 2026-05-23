@@ -66,12 +66,12 @@ a:hover {
   opacity: 0.55;
 }
 
-/* Emphasis: italic serif — used sparingly */
+/* Emphasis: serif + accent color — Japanese-friendly (no italic) */
 em {
-  font-style: italic;
+  font-style: normal;
   font-family: var(--font-serif);
-  font-weight: 400;
-  color: var(--ink);
+  font-weight: 500;
+  color: var(--accent);
   font-feature-settings: "palt" 1;
 }
 
@@ -390,6 +390,13 @@ em {
   color: rgba(255, 255, 255, 0.92);
   margin-bottom: 3rem;
   max-width: 520px;
+  text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Hero内のem は暗い背景上で見やすいオレンジアクセントに */
+.hero-sub em,
+.hero-headline em {
+  color: var(--accent);
   text-shadow: 0 1px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -1358,7 +1365,7 @@ section {
 .member-note {
   font-size: 0.82rem;
   color: var(--gray-500);
-  font-style: italic;
+  font-style: normal;
   margin-top: 1rem;
   line-height: 1.7;
 }
@@ -1501,7 +1508,7 @@ section {
 .contact-info-value .placeholder {
   color: var(--gray-500);
   font-size: 0.88rem;
-  font-style: italic;
+  font-style: normal;
 }
 
 .contact-note {
@@ -1774,4 +1781,175 @@ section {
 ::selection {
   background: var(--accent);
   color: var(--white);
+}
+
+/* ============================================
+   INTEGRATIVE (統合型コンサルティング)
+   v3 additions — Integrative consulting concept
+   ============================================ */
+.integrative {
+  padding: var(--space-xl) 0;
+  background: var(--gray-50);
+  border-top: 1px solid var(--gray-200);
+}
+
+.integrative-lead {
+  font-size: 1.0625rem;
+  line-height: 2;
+  color: var(--gray-700);
+  margin: 2rem 0 4rem;
+  max-width: 56rem;
+}
+
+.integrative-lead em {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.integrative-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin: 3rem auto 4rem;
+  max-width: 72rem;
+  padding: 0 var(--space-md);
+}
+
+.integrative-card {
+  padding: 2.5rem 2rem;
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  position: relative;
+}
+
+.integrative-card.is-conventional {
+  opacity: 0.78;
+}
+
+.integrative-card.is-ours {
+  border-color: var(--accent);
+  border-width: 1px 1px 1px 4px;
+  background: var(--white);
+}
+
+.integrative-card-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--gray-500);
+  margin-bottom: 0.75rem;
+}
+
+.integrative-card.is-ours .integrative-card-eyebrow {
+  color: var(--accent);
+}
+
+.integrative-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: var(--ink);
+}
+
+.integrative-card-title em {
+  font-style: normal;
+  font-family: var(--font-serif);
+  font-weight: 500;
+}
+
+.integrative-card-body {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: var(--gray-700);
+}
+
+.integrative-card-body p + p {
+  margin-top: 0.75rem;
+}
+
+/* Process flow — stepped narrative */
+.integrative-flow {
+  max-width: 72rem;
+  margin: 4rem auto 0;
+  padding: 0 var(--space-md);
+}
+
+.integrative-flow-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.integrative-flow-title em {
+  font-style: normal;
+  font-family: var(--font-serif);
+}
+
+.integrative-flow-sub {
+  text-align: center;
+  color: var(--gray-500);
+  font-size: 0.9rem;
+  margin-bottom: 3rem;
+}
+
+.integrative-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  position: relative;
+}
+
+.integrative-step {
+  padding: 1.5rem 1.25rem;
+  background: var(--white);
+  border-top: 2px solid var(--accent);
+  position: relative;
+}
+
+.integrative-step-num {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+
+.integrative-step-title {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.integrative-step-desc {
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--gray-700);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .integrative-compare {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+  .integrative-steps {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Subtle pull-quote inline emphasis (used in story update) */
+.pullquote {
+  font-family: var(--font-serif);
+  font-style: normal;
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: var(--ink);
+  padding: 1.5rem 0 1.5rem 1.5rem;
+  border-left: 3px solid var(--accent);
+  margin: 1.5rem 0;
 }
