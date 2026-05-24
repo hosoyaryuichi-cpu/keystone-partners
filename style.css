@@ -145,12 +145,12 @@ em {
 .nav-logo::before {
   content: "";
   display: block;
-  width: 38px;
+  width: 58px;
   height: 38px;
   background-image: url('images/logo-mark.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left center;
   flex-shrink: 0;
 }
 
@@ -180,7 +180,7 @@ em {
 
 @media (max-width: 768px) {
   .nav-logo::before {
-    width: 32px;
+    width: 48px;
     height: 32px;
   }
   .nav-logo-mark {
@@ -827,12 +827,12 @@ section {
 }
 
 .footer-brand-logo {
-  width: 44px;
+  width: 65px;
   height: 44px;
   background-image: url('images/logo-mark-light.png');
   background-size: contain;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: left center;
   margin-bottom: 1rem;
   opacity: 0.92;
 }
